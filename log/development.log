@@ -127,3 +127,197 @@ Processing by ProjectsController#index as HTML
 Completed 200 OK in 157ms (Views: 152.7ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/" for 10.10.10.9 at 2021-10-20 18:10:12 +0000
+Cannot render console from 10.10.10.9! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.7.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/views/projects/index.html.erb:15
+  Rendered projects/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 192ms (Views: 185.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/projects/new" for 10.10.10.9 at 2021-10-20 18:10:14 +0000
+Cannot render console from 10.10.10.9! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProjectsController#new as HTML
+  Rendering projects/new.html.erb within layouts/application
+  Rendered projects/_form.html.erb (27.4ms)
+  Rendered projects/new.html.erb within layouts/application (29.1ms)
+Completed 200 OK in 66ms (Views: 57.9ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/projects" for 10.10.10.9 at 2021-10-20 18:10:24 +0000
+Cannot render console from 10.10.10.9! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yvaS9WxM6nskR9HpX0W267Zr+NN1bYfagsf5zFu3CjVJz5jWX3BVlgLk8kVop9GCZ/jMqmnlZQjcOah0Xm3Pww==", "project"=>{"title"=>"Test Project", "description"=>"quick test."}, "commit"=>"Create Project"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/projects_controller.rb:27
+  [1m[36mProject Create (0.6ms)[0m  [1m[32mINSERT INTO "projects" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Test Project"], ["description", "quick test."], ["created_at", "2021-10-20 18:10:24.876469"], ["updated_at", "2021-10-20 18:10:24.876469"]]
+  ↳ app/controllers/projects_controller.rb:27
+  [1m[35m (8.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/projects_controller.rb:27
+Redirected to http://localhost:3000/projects/2
+Completed 302 Found in 14ms (ActiveRecord: 9.1ms)
+
+
+Started GET "/projects/2" for 10.10.10.9 at 2021-10-20 18:10:24 +0000
+Cannot render console from 10.10.10.9! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:62
+  Rendering projects/show.html.erb within layouts/application
+  Rendered projects/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 19ms (Views: 11.9ms | ActiveRecord: 0.2ms)
+
+
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" LIMIT ?[0m  [["LIMIT", 11]]
+Started POST "/projects" for 10.10.10.9 at 2021-10-20 18:25:38 +0000
+Cannot render console from 10.10.10.9! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"s+fkDG6AtCOmQ9wTl4bgxygtoH1nVAOwYfouEYE283hRx6SVLzBrKFLyOtbP/fLlbCCUSadMDkN9+BiJ4o7zKA==", "project"=>{"title"=>"Test Project 2", "description"=>"quick test 2."}, "commit"=>"Create Project"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/projects_controller.rb:27
+  [1m[36mProject Create (4.0ms)[0m  [1m[32mINSERT INTO "projects" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Test Project 2"], ["description", "quick test 2."], ["created_at", "2021-10-20 18:25:38.062644"], ["updated_at", "2021-10-20 18:25:38.062644"]]
+  ↳ app/controllers/projects_controller.rb:27
+  [1m[35m (7.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/projects_controller.rb:27
+Redirected to http://localhost:3000/projects/3
+Completed 302 Found in 25ms (ActiveRecord: 12.0ms)
+
+
+Started GET "/projects/3" for 10.10.10.9 at 2021-10-20 18:25:38 +0000
+Cannot render console from 10.10.10.9! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:62
+  Rendering projects/show.html.erb within layouts/application
+  Rendered projects/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 17ms (Views: 14.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/projects" for 10.10.10.9 at 2021-10-20 18:25:39 +0000
+Cannot render console from 10.10.10.9! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/views/projects/index.html.erb:15
+  Rendered projects/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 17ms (Views: 16.2ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/projects/new" for 10.10.10.9 at 2021-10-20 18:51:56 +0000
+Cannot render console from 10.10.10.9! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProjectsController#new as HTML
+  Rendering projects/new.html.erb within layouts/application
+  Rendered projects/_form.html.erb (10.2ms)
+  Rendered projects/new.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 65ms (Views: 61.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.192.40.36 at 2021-10-25 20:11:31 +0000
+Cannot render console from 10.192.40.36! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.7.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/views/projects/index.html.erb:15
+  Rendered projects/index.html.erb within layouts/application (33.8ms)
+Completed 200 OK in 460ms (Views: 430.6ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/projects/new" for 10.192.40.36 at 2021-10-25 20:11:33 +0000
+Cannot render console from 10.192.40.36! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProjectsController#new as HTML
+  Rendering projects/new.html.erb within layouts/application
+  Rendered projects/_form.html.erb (40.9ms)
+  Rendered projects/new.html.erb within layouts/application (47.3ms)
+Completed 200 OK in 129ms (Views: 114.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/projects" for 10.192.40.36 at 2021-10-25 20:11:45 +0000
+Cannot render console from 10.192.40.36! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZR9vPl4Akuy3XOX+8DdzLbtygzNZIUVe8XANZTDUR2TAgEf9e0jJREfm6HebVhphnd8+OOLaMB4o0tfcdxNWcA==", "project"=>{"title"=>"", "description"=>""}, "commit"=>"Create Project"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/projects_controller.rb:27
+  [1m[36mProject Create (0.4ms)[0m  [1m[32mINSERT INTO "projects" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", ""], ["description", ""], ["created_at", "2021-10-25 20:11:45.085228"], ["updated_at", "2021-10-25 20:11:45.085228"]]
+  ↳ app/controllers/projects_controller.rb:27
+  [1m[35m (9.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/projects_controller.rb:27
+Redirected to http://localhost:3000/projects/4
+Completed 302 Found in 19ms (ActiveRecord: 10.4ms)
+
+
+Started GET "/projects/4" for 10.192.40.36 at 2021-10-25 20:11:45 +0000
+Cannot render console from 10.192.40.36! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:62
+  Rendering projects/show.html.erb within layouts/application
+  Rendered projects/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 23ms (Views: 16.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/projects" for 10.192.40.36 at 2021-10-25 20:11:58 +0000
+Cannot render console from 10.192.40.36! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (2.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/views/projects/index.html.erb:15
+  Rendered projects/index.html.erb within layouts/application (21.6ms)
+Completed 200 OK in 97ms (Views: 91.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/projects/new" for 10.192.40.36 at 2021-10-25 20:12:00 +0000
+Cannot render console from 10.192.40.36! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProjectsController#new as HTML
+  Rendering projects/new.html.erb within layouts/application
+  Rendered projects/_form.html.erb (8.4ms)
+  Rendered projects/new.html.erb within layouts/application (15.9ms)
+Completed 200 OK in 76ms (Views: 72.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/projects" for 10.192.40.36 at 2021-10-25 20:19:04 +0000
+Cannot render console from 10.192.40.36! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.8ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/views/projects/index.html.erb:15
+  Rendered projects/index.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 111ms (Views: 105.9ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/projects/4" for 10.192.40.36 at 2021-10-25 20:19:07 +0000
+Cannot render console from 10.192.40.36! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProjectsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"sZiTKEXcNHq1IPSpM9Bi8q5rrPTnLDkThMIYiJ3kp/ZcAqi8FingqGDjEywE5JTHW5Ebs+GPxCISXUgqgfnwKQ==", "id"=>"4"}
+  [1m[36mProject Load (1.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:62
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/projects_controller.rb:52
+  [1m[36mProject Destroy (3.9ms)[0m  [1m[31mDELETE FROM "projects" WHERE "projects"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/projects_controller.rb:52
+  [1m[35m (25.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/projects_controller.rb:52
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 60ms (ActiveRecord: 30.5ms)
+
+
+Started GET "/projects" for 10.192.40.36 at 2021-10-25 20:19:07 +0000
+Cannot render console from 10.192.40.36! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.8ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/views/projects/index.html.erb:15
+  Rendered projects/index.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 93ms (Views: 88.9ms | ActiveRecord: 0.8ms)
+
+
