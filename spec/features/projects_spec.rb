@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "Projects", type: :feature do
   context "Create new project" do
-    before(:each) do
+    before(:each) do #Visit the new project URL and enter "Test Title" into the Title form before running all tests in the "Create new project" context.
       visit new_project_path
       within("form") do
         fill_in "Title", with: "Test title"
@@ -10,9 +10,9 @@ RSpec.feature "Projects", type: :feature do
     end
 
     scenario "should be successful" do
-      fill_in "Description", with: "Test description"
-      click_button "Create Project"
-      expect(page).to have_content("Project was successfully created")
+      fill_in "Description", with: "Test description" #Enters data into a form.
+      click_button "Create Project" #Clicks on a button that matches the search "Create Project"
+      expect(page).to have_content("Project was successfully created") #Expect the page to have text. The test fails if it doesn't.
     end
 
     scenario "should fail" do
@@ -50,7 +50,7 @@ RSpec.feature "Projects", type: :feature do
       visit projects_path
       click_link "Destroy"
       expect(page).to have_content("Project was successfully destroyed")
-      expect(Project.count).to eq(0)
+      expect(Project.count).to eq(0) #Expect no projects to be in the DB once this test is run. Fail if any exist.
     end
   end
 end
