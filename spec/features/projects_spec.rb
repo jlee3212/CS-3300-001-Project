@@ -1,14 +1,6 @@
 require 'rails_helper'
 
 RSpec.feature "Projects", type: :feature do
-
-  # NOTE: I added this code. Without it the "remove project" scenario fails. Projects stored in database persisting between contexts and scenarios.
-  # This code ensures that before each context is run, the Project database table is empty.
-  before(:each) do
-    Project.delete_all
-  end
-  # End of my code.
-
   context "Create new project" do
     before(:each) do
       visit new_project_path
@@ -54,12 +46,11 @@ RSpec.feature "Projects", type: :feature do
 
   context "Remove existing project" do
     let!(:project) { Project.create(title: "Test title", description: "Test content") }
-
     scenario "remove project" do
       visit projects_path
-      #click_link "Destroy"
-      #expect(page).to have_content("Project was successfully destroyed")
-      expect(Project.count).to eq(4)
+      click_link "Destroy"
+      expect(page).to have_content("Project was successfully destroyed")
+      expect(Project.count).to eq(0)
     end
   end
 end
