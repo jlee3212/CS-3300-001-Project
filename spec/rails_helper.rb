@@ -17,6 +17,12 @@ SimpleCov.start 'rails' do
   add_filter '/bin/'
   add_filter '/db/'
   add_filter '/spec/' # for rspec
+
+  #I added these filters for iteration2_5 to increase code coverage.
+  add_filter '/channels/'
+  add_filter '/helpers/'
+  add_filter '/jobs/'
+  add_filter '/mailers/'
 end
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
