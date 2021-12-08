@@ -1,14 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @project.title %>
-</p>
+<div class="jumbotron">
+  <h1 style="margin-bottom: 20px">
+    <%= @project.title %>
+  </h1>
+  <div class="bg-secondary">
+    <strong class="text-white">
+      <%= @project.description %>
+    </strong>
+  </div>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @project.description %>
-</p>
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<%= button_to 'Edit', edit_project_path(@project) %>
+<%= button_to 'Back', projects_path, :method => "get" %>
